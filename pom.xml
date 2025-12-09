@@ -12,7 +12,7 @@
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <sonar.projectKey>github-sona_githubsonar</sonar.projectKey>
+        <sonar.projectKey>kadaparavi</sonar.projectKey>
         <sonar.organization>Github_sonar</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
