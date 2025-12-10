@@ -9,38 +9,56 @@
     <version>1.0-SNAPSHOT</version>
     <name>my-app</name>
 
+    <!-- ==============================
+         GLOBAL PROJECT PROPERTIES
+         ============================== -->
     <properties>
+        <!-- Java Version -->
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
+
+        <!-- Encoding -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-        <!-- Correct this with the REAL SonarCloud organization key -->
+        <!-- Suppress Maven 4 warnings -->
+        <maven.project.sourceRoots.warningsDisabled>true</maven.project.sourceRoots.warningsDisabled>
+
+        <!-- SonarCloud Config -->
         <sonar.projectKey>kadaparavi</sonar.projectKey>
         <sonar.organization>Github_sonar</sonar.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
     </properties>
 
+    <!-- ==============================
+         DEPENDENCIES
+         ============================== -->
     <dependencies>
+
         <!-- JUnit 5 -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.9.3</version>
+            <version>5.11.0</version>
             <scope>test</scope>
         </dependency>
+
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.9.3</version>
+            <version>5.11.0</version>
             <scope>test</scope>
         </dependency>
+
     </dependencies>
 
+    <!-- ==============================
+         BUILD PLUGINS (LATEST VERSIONS)
+         ============================== -->
     <build>
         <plugins>
 
-            <!-- Compiler plugin -->
+            <!-- Compiler Plugin -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -48,25 +66,24 @@
                 <configuration>
                     <source>17</source>
                     <target>17</target>
-                    <encoding>UTF-8</encoding>
                 </configuration>
             </plugin>
 
-            <!-- Fix platform encoding warnings -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-resources-plugin</artifactId>
-                <version>3.3.1</version>
-            </plugin>
-
-            <!-- Surefire plugin -->
+            <!-- Surefire plugin for Unit Tests -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.2.5</version>
             </plugin>
 
-            <!-- Sonar Maven Plugin (explicit version to remove warnings) -->
+            <!-- Resource Plugin -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-resources-plugin</artifactId>
+                <version>3.3.1</version>
+            </plugin>
+
+            <!-- Sonar Maven Plugin (explicit version to avoid warnings) -->
             <plugin>
                 <groupId>org.sonarsource.scanner.maven</groupId>
                 <artifactId>sonar-maven-plugin</artifactId>
