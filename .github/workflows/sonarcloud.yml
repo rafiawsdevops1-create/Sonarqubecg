@@ -32,6 +32,6 @@ jobs:
         run: |
           mvn -B clean verify sonar:sonar \
             -Dsonar.projectKey=github-sona_githubsonari \
-            -Dsonar.organization=Github_sonar \
+            -Dsonar.organization=kadaparavi \
             -Dsonar.host.url=https://sonarcloud.io \
             -Dsonar.token=${{ secrets.SONAR_TOKEN }}
